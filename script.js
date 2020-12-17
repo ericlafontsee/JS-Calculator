@@ -26,27 +26,28 @@ keys.addEventListener("click", e => {
         // if(action === 'decimal'){
         //     display.textContent += '.'
         // }
-        // if (
-        //     action === 'add' ||
-        //     action === 'subtract' ||
-        //     action === 'multiply' ||
-        //     action === 'divide'
-        //   ) {
-        //     key.classList.add("is-depressed");
-        //     calculator.dataset.previousKeyType = 'operator';
-        //   }
+        if (
+            action === 'add' ||
+            action === 'subtract' ||
+            action === 'multiply' ||
+            action === 'divide'
+          ) {
+            // key.classList.add("is-depressed");
+            // calculator.dataset.previousKeyType = 'operator';
+            console.log('operator')
+          }
 
         //   Array.from(key.parentNode.children).forEach(k => k.classList.remove("is-depressed"));
-        //   if (action === 'decimal') {
-        //     console.log('decimal key!')
-        //   }
+          if (action === 'decimal') {
+            console.log('decimal key!')
+          }
           
-        //   if (action === 'clear') {
-        //     console.log('clear key!')
-        //   }
+          if (action === 'clear') {
+            console.log('clear key!')
+          }
           
-        //   if (action === 'calculate') {
-        //     console.log('equal key!')
-        //   }
+          if (action === 'calculate') {
+            console.log('equal key!')
+          }
     }
 })
