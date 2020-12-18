@@ -33,13 +33,14 @@ keys.addEventListener("click", e => {
     if (!action) {
       if(displayedNum === '0' || previousKeyType === 'operator'){
           display.textContent = keyContent;
-      }else{
+      }else if(previousKeyType === 'decimal'){
           display.textContent += keyContent;
       }
     }
 
     if(action === 'decimal'){
-        display.textContent += '.'
+        display.textContent += '.';
+        calculator.dataset.previousKeyType = 'decimal';
     }
     if (
       action === "add" ||
@@ -68,25 +69,25 @@ keys.addEventListener("click", e => {
   }
 });
 
-// function calculate(a, operator, b){
-//     var a = parseInt(firstNumber);
-//     var b = parseInt(secondNumber);
-//     var fn = operations[operator];
-//     result = fn(a,b);
+function calculate(a, operator, b){
+    var a = parseFloat(firstNumber);
+    var b = parseFloat(secondNumber);
+    var fn = operations[operator];
+    result = fn(a,b);
 
-//     return result;
-// }
-const calculate = (n1, operator, n2) => {
-    let result = ''
-    if (operator === 'add') {
-      result = parseFloat(n1) + parseFloat(n2)
-    } else if (operator === 'subtract') {
-      result = parseFloat(n1) - parseFloat(n2)
-    } else if (operator === 'multiply') {
-      result = parseFloat(n1) * parseFloat(n2)
-    } else if (operator === 'divide') {
-      result = parseFloat(n1) / parseFloat(n2)
-    }
+    return result;
+}
+// const calculate = (n1, operator, n2) => {
+//     let result = ''
+//     if (operator === 'add') {
+//       result = parseFloat(n1) + parseFloat(n2)
+//     } else if (operator === 'subtract') {
+//       result = parseFloat(n1) - parseFloat(n2)
+//     } else if (operator === 'multiply') {
+//       result = parseFloat(n1) * parseFloat(n2)
+//     } else if (operator === 'divide') {
+//       result = parseFloat(n1) / parseFloat(n2)
+//     }
   
-    return result
-  }
+//     return result;
+//   }
